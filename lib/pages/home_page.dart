@@ -159,7 +159,7 @@ class _HomePagesState extends State<HomePages> {
                                     builder: (context) => SepetPage(
                                       title: textList[i],
                                       fiyat: fiyatListesi[i],
-                                      ImgPath: imgList[i],
+                                      imgPath: imgList[i],
                                     ),
                                   ),
                                 );

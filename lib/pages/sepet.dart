@@ -4,24 +4,17 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 class SepetPage extends StatefulWidget {
   const SepetPage(
       {Key? key,
-      required this.ImgPath,
+      required this.imgPath,
       required this.title,
       required this.fiyat})
       : super(key: key);
 
-  final String ImgPath;
+  final String imgPath;
   final String title;
   final int fiyat;
   @override
   State<SepetPage> createState() => _SepetPageState();
 }
-
-final myCustomIcon = IconData(
-  0xe001, // özel ikonunuzun Unicode kod noktası
-  fontFamily: 'MyFlutterApp', // özel ikonunuzun yazı tipi adı
-  fontPackage: null, // varsayılan değer
-);
-final customIcon = Image.asset('assets/favorite_selected.png');
 
 class _SepetPageState extends State<SepetPage> {
   int counter = 1;
@@ -101,7 +94,7 @@ class _SepetPageState extends State<SepetPage> {
                     key: UniqueKey(),
                     startActionPane: ActionPane(
                       extentRatio: 0.25,
-                      motion: ScrollMotion(),
+                      motion: const ScrollMotion(),
                       children: [
                         GestureDetector(
                           onTap: () {
@@ -124,7 +117,7 @@ class _SepetPageState extends State<SepetPage> {
                       extentRatio: 0.30,
                       motion: const ScrollMotion(),
                       children: [
-                        SizedBox(width: 15),
+                        const SizedBox(width: 15),
                         GestureDetector(
                           onTap: () {
                             setState(() {
@@ -137,7 +130,7 @@ class _SepetPageState extends State<SepetPage> {
                             color: _isedit ? Colors.black : Colors.white,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         GestureDetector(
                           onTap: () {
                             setState(() {
@@ -150,7 +143,7 @@ class _SepetPageState extends State<SepetPage> {
                             color: _isDelete ? Colors.black : Colors.white,
                           ),
                         ),
-                        SizedBox(width: 15),
+                        const SizedBox(width: 15),
                       ],
                     ),
                     child: Container(
@@ -159,7 +152,7 @@ class _SepetPageState extends State<SepetPage> {
                           color: Colors.grey.shade600,
                           borderRadius: BorderRadius.circular(10)),
                       child: ListTile(
-                        leading: Image(image: AssetImage(widget.ImgPath)),
+                        leading: Image(image: AssetImage(widget.imgPath)),
                         title: Text(widget.title),
                         subtitle: Text(totalPrice.toString()),
                         trailing: Column(
