@@ -1,7 +1,6 @@
 import 'package:coffee/pages/favorite_pages.dart';
 import 'package:coffee/pages/home_page.dart';
 import 'package:coffee/pages/notifications_pages.dart';
-import 'package:coffee/pages/sepet.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +14,11 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-var sayfaListesi = [HomePages(), FavoritePages(), NotificationsPages()];
+var sayfaListesi = [
+  const HomePages(),
+  const FavoritePages(),
+  const NotificationsPages(),
+];
 int secilenIndex = 0;
 
 class _MyAppState extends State<MyApp> {
